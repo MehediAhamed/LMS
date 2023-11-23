@@ -1,0 +1,31 @@
+{
+  "name": "libary",
+  "version": "1.0.0",
+  "description": "![admin11](https://user-images.githubusercontent.com/37147607/130272253-77ac25fd-6104-4e24-9377-c56f3d270802.PNG) ![admin12](https://user-images.githubusercontent.com/37147607/130272272-a6aa36e9-411a-45ee-a034-fbb5d19b34c1.PNG) ![font2](https://user-images.githubusercontent.com/37147607/130272294-4d6793bf-3383-43eb-8675-84d16eaf2d5b.PNG)",
+  "main": "server.js",
+  "engines": {
+    "node": "14.8.0",
+    "npm": "6.14.7"
+  },
+  "scripts": {
+    "client-install": "npm install --prefix client",
+    "server": "nodemon server.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "start": "node server.js",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "concurrently": "^6.2.1",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.13.5",
+    "nodemon": "^3.0.1"
+  }
+}
