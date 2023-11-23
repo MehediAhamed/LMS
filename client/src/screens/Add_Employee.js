@@ -49,9 +49,6 @@ const Addemployee = () => {
              </div>
              <br />
              <br />
-             <button style={{width:"100%",height:"60px",color:"white",borderRadius:"20px",backgroundColor:"#5DB9F1"}} onClick={() => PostData()}>
-                        Add Employee 
-                    </button>
              </div>
         </div>
     );
