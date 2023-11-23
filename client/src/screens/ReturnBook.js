@@ -39,7 +39,7 @@ const ReturnBook = () => {
   <tr>
       <th style={{textAlign:"center"}}>Book</th>
       <th style={{textAlign:"center"}}>Author</th>
-      <th style={{textAlign:"center"}}>Publisher</th>
+      <th style={{textAlign:"center"}}>genre</th>
       <th style={{textAlign:"center"}}>Student Name</th>
       <th style={{textAlign:"center"}}>Branch</th>
   </tr>
@@ -55,7 +55,7 @@ const ReturnBook = () => {
           {book.author}
       </td >
       <td style={{textAlign:"center"}}>
-          {book.publisher}
+          {book.genre}
       </td>
      
       <td style={{textAlign:"center"}}>

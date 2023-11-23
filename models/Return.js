@@ -24,7 +24,7 @@ const returnSchema = new mongoose.Schema({
       
     },
 
-    publisher: {
+    genre: {
         type: String,
        
     },

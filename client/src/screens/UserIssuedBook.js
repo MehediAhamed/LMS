@@ -74,7 +74,7 @@ dayDiff = days
     <tr>
         <th style={{textAlign:"center"}}>Book</th>
         <th style={{textAlign:"center"}}>Author</th>
-        <th style={{textAlign:"center"}}>Publisher</th>
+        <th style={{textAlign:"center"}}>genre</th>
         <th style={{textAlign:"center"}}>Actions</th>
     </tr>
 </thead>
@@ -88,7 +88,7 @@ dayDiff = days
             {book.author}
         </td >
         <td style={{textAlign:"center"}}>
-            {book.publisher}
+            {book.genre}
         </td>
        
         <td style={{textAlign:"center"}}>
@@ -110,7 +110,7 @@ dayDiff = days
         <Modal.Body>
             <h3><b>Book Name : </b>{singleIsBook && singleIsBook.title}</h3>
             <p>  <b>Author :</b> {singleIsBook && singleIsBook.author}</p>
-            <p> <b>Publisher : </b>{singleIsBook && singleIsBook.publisher}</p>
+            <p> <b>genre : </b>{singleIsBook && singleIsBook.genre}</p>
             <p> <b>Originally published: </b>{singleIsBook && singleIsBook.year}</p>
             {/* <p>{date && date.substring(0,10)}</p> */}
             <p> <b>Issued Date:</b>{date &&  <Moment format="YYYY-MM-DD">{date}</Moment>}</p>

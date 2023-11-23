@@ -10,18 +10,18 @@ const Issue = require("../models/issue");
 
 router.post("/addBook", async (req, res) => {
 
-   const { title,author,publisher,year,copies } = req.body ;
+   const { title,author,genre,year,copies } = req.body ;
      console.log("req.body",req.body)
     if(req.body._id){
         const obj = await Issue.find({_id:req.body._id})
         obj[0].isRecom = false 
         await obj[0].save()
     }
-    const book = await new Book({ title,author,publisher,year,copies})
+    const book = await new Book({ title,author,genre,year,copies})
     await book.save()
 
     // const book = new Book({
-    //     title,author,publisher,year,copies
+    //     title,author,genre,year,copies
     // })
     // book.save().then(result => {
     //     res.status(201).json({

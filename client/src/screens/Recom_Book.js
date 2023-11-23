@@ -6,7 +6,7 @@ import {Toast} from "react-bootstrap"
 const Recom_Book = () => {
     const[title,setTitle] = useState("")
     const[author,setAuthor] = useState("")
-    const[publisher,setPublisher] = useState("")
+    const[genre,setgenre] = useState("")
     const [show, setShow] = useState(false);
 
     const {currentUser} = useSelector(state => state.userLoginReducer)
@@ -17,13 +17,13 @@ const Recom_Book = () => {
    const userName = currentUser.user.name ;
 
     const PostData = () => {
-        const book = { title,author,publisher,userId, userBranch,userName,isRecom:true};
+        const book = { title,author,genre,userId, userBranch,userName,isRecom:true};
        
         dispatch(issueABook(book));
         setShow(true);
         setAuthor("")
         setTitle("")
-        setPublisher("")
+        setgenre("")
     };
     return (
         <div style={{marginTop:"4%"}}>
@@ -41,8 +41,8 @@ const Recom_Book = () => {
                         onChange={(e) => setAuthor(e.target.value)} className="form-control" />
                     </div>
                     <div className="mb-4">
-                        <input type="text" placeholder="publisher" value={publisher} style={{height:"60px"}} 
-                        onChange={(e) => setPublisher(e.target.value)} className="form-control" />
+                        <input type="text" placeholder="genre" value={genre} style={{height:"60px"}} 
+                        onChange={(e) => setgenre(e.target.value)} className="form-control" />
                     </div>
                     <button className="btn btn-primary " onClick={() => PostData()} 
                     style={{height:"50px",fontFamily:"sans-serif",fontSize:"20px"}} >
