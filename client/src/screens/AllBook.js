@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { getAllBook, filterBook, filterBookByAuthor, filterBookByGenre } from "../actions/book_action"
+import { getAllBook, filterBook, filterBookByAuthor, filterBookByGenre, deleteBook } from "../actions/book_action"
 import { issueABook, getAllIssuedBook } from "../actions/Issue_action"
 import { useDispatch, useSelector } from 'react-redux'
 import { Toast, Spinner } from "react-bootstrap"
@@ -28,6 +28,13 @@ const AllBook = () => {
     let filterBook22 = all_IssuedBook && all_IssuedBook.filter(book => book.userId == userId);
     let newBooksId = filterBook22 && filterBook22.map(book => book.bookId);
 
+
+    const handleDelete = (bookId) => {
+        // Dispatch the deleteBook action with the bookId
+        dispatch(deleteBook(bookId));
+        window.location.reload();
+
+    };
     const postData = (book) => {
         if (newBooksId && newBooksId.includes(book._id)) {
             setError(true);
@@ -102,6 +109,7 @@ const AllBook = () => {
                         />
                         <button onClick={() => dispatch(filterBookByAuthor(searchKeyByAuthor))} className="btn btn-primary">Search</button>
                     </div>
+                    <br></br>
                     <div className="col-md-8 m-auto" style={{ display: "flex" }}>
                         <input
                             type="text"
@@ -136,6 +144,29 @@ const AllBook = () => {
                                         <td>{book.copies}</td>
                                         <td>{book.copies > 0 ? "AVAILABLE" : "NOT AVAILABLE"}</td>
                                         <td>
+
+                                            {currentUser.user.isAdmin && (
+                                                <i
+                                                    className='fa fa-trash m-1'
+                                                    // Call handleDelete when the delete icon is clicked
+                                                    onClick={() => {
+                                                        handleDelete(book._id);
+                                                        console.log(book._id);
+                                                    }}
+                                                ></i>
+
+                                            )}
+
+                                            {currentUser.user.isAdmin && (
+                                                <><span> &nbsp;</span><i
+                                                    className='fa fa-edit m-1'
+                                                    onClick={() => {
+                                                        // Add your edit logic here
+                                                        console.log('Edit book:', book._id);
+                                                    } }
+                                                ></i></>
+
+                                            )}
                                             {!currentUser.user.isAdmin && (
                                                 <button onClick={() => postData(book)} className={`btn btn-success`}>Issue</button>
                                             )}

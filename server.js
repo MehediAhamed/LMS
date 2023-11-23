@@ -20,11 +20,12 @@ mongoose.connection.on("connected", () => {
 const app = express();
 app.use(express.json())
 app.use(cors());
+const bookRouter = require('./routes/book_route');
+app.use('/api/books', bookRouter); // Use the bookRouter here
 
 app.use('/public', express.static('public'));
-
 app.use('/api/users', require("./routes/student_route"))
-app.use('/api/books', require("./routes/book_route"))
+//app.use('/api/books', require("./routes/book_route"))
 app.use('/api/issues', require("./routes/issue_route"))
 
 

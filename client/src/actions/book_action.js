@@ -87,6 +87,7 @@ export const filterBookByAuthor = (searchKey) => async (dispatch) => {
 
 // New action for filtering by genre
 export const filterBookByGenre = (genre) => async (dispatch) => {
+ 
   dispatch({
     type: "GET_BOOKS_REQUEST",
   });
@@ -104,6 +105,27 @@ export const filterBookByGenre = (genre) => async (dispatch) => {
   } catch (error) {
     dispatch({
       type: "GET_BOOKS_FAILED",
+      payload: error,
+    });
+  }
+};
+export const deleteBook = (bookId) => async (dispatch) => {
+  dispatch({
+    type: 'DELETE_BOOK_REQUEST',
+  });
+
+  try {
+    // Make an API request to delete the book with the specified bookId
+    await axios.delete(`/api/books/deleteBook/${bookId}`);
+    console.log(bookId)
+
+    dispatch({
+      type: 'DELETE_BOOK_SUCCESS',
+      payload: bookId,
+    });
+  } catch (error) {
+    dispatch({
+      type: 'DELETE_BOOK_FAILED',
       payload: error,
     });
   }

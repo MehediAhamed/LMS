@@ -45,6 +45,27 @@ router.get("/allBook", (req, res) => {
 });
    
 
+router.delete('/deleteBook/:bookId', async (req, res) => {
+    const bookId = req.params.bookId;
+  
+    try {
+      console.log('Deleting book with ID:', bookId);
+      const deletedBook = await Book.findByIdAndDelete(bookId);
+      console.log('Deleted Book:', deletedBook);
+  
+      if (deletedBook) {
+        console.log('Book deleted successfully.');
+        res.status(200).json({ message: 'Book deleted successfully.' });
+      } else {
+        console.log('Book not found.');
+        res.status(404).json({ error: 'Book not found.' });
+      }
+    } catch (error) {
+      console.error('Error deleting book:', error);
+      res.status(500).json({ error: 'Internal Server Error', details: error.message });
+    }
+});
+
 
 
 module.exports = router;
