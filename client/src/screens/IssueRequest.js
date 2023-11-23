@@ -25,7 +25,7 @@ const IssueRequest = () => {
     <tr >
         <th>Book Name</th>
         <th>Author</th>
-        <th>Student Name</th>
+        <th>Username</th>
         <th>Actions</th>
     </tr>
 </thead>

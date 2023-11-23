@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const studentSchema = new mongoose.Schema({
+const UserLMSSchema = new mongoose.Schema({
 
 
     name: {
@@ -25,9 +25,6 @@ const studentSchema = new mongoose.Schema({
     addmission_year: {
         type: String,
     },
-    phone_no: {
-        type: Number,
-    },
     isAdmin:{
         type:Boolean,
         default:false
@@ -37,4 +34,4 @@ const studentSchema = new mongoose.Schema({
 
 }, { timestamps: true });
 
-module.exports = mongoose.model("Student", studentSchema);
+module.exports = mongoose.model("UserLMS", UserLMSSchema);

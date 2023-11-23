@@ -2,7 +2,7 @@ let express = require("express")
 let mongoose = require('mongoose')
 let cors = require('cors')
 let path = require('path')
-const { MONGO_URI } = require("./keys");
+const { MONGO_URI } = require("./db");
 
 
 // const api = require('./backend/routes')

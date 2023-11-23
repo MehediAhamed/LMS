@@ -1,6 +1,6 @@
 const jwt = require('jsonwebtoken')
 const Student = require("../models/student");
-const { JWT_SECRET } = require("../keys");
+const { JWT_SECRET } = require("../db");
 
 
 module.exports = (req,res,next)=>{

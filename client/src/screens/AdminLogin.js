@@ -42,7 +42,7 @@ Management System</p>
 <br />
                     <div style={{marginTop:"20px"}}>
                         <input type="text" className="form-control" style={{height:"60px",borderRadius:"20px"}}
-                         placeholder="Employee Id" value={user_id} onChange={(e) => setuser_id(e.target.value)} />
+                         placeholder="User Id" value={user_id} onChange={(e) => setuser_id(e.target.value)} />
                     </div>
                     <br />
                     <div>

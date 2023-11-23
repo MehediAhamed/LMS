@@ -40,7 +40,7 @@ const Issue_Return = () => {
       <th style={{textAlign:"center"}}>Book</th>
       <th style={{textAlign:"center"}}>Author</th>
       <th style={{textAlign:"center"}}>genre</th>
-      <th style={{textAlign:"center"}}>Student Name</th>
+      <th style={{textAlign:"center"}}>Username</th>
   </tr>
 </thead>
 <tbody>

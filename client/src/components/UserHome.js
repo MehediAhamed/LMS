@@ -16,11 +16,10 @@ const UserHome = () => {
                   <h3 style={{textAlign:"center"}}>{currentUser && currentUser[0] && currentUser[0].name}</h3>
                   <div style={{backgroundColor:"#2c5c69",padding:"20px"}}>
                    { currentUser && currentUser[0] && currentUser[0].isAdmin ?
-                    <p style={{fontSize:"22px",color:"white"}}> <b>Employee Id : </b>{currentUser && currentUser[0] && currentUser[0].user_id}</p>
+                    <p style={{fontSize:"22px",color:"white"}}> <b>User Id : </b>{currentUser && currentUser[0] && currentUser[0].user_id}</p>
                    : <>
                       <p style={{fontSize:"22px",color:"white"}}> <b> Email Id :</b> {currentUser && currentUser[0] && currentUser[0].email}</p>
-                  <p style={{fontSize:"22px",color:"white"}}> <b>Phone Number :</b> {currentUser && currentUser[0] && currentUser[0].phone_no}</p>
-                  <p style={{fontSize:"22px",color:"white"}}> <b>Enrollment No : </b>{currentUser && currentUser[0] && currentUser[0].user_id}</p>
+                  <p style={{fontSize:"22px",color:"white"}}> <b>User ID : </b>{currentUser && currentUser[0] && currentUser[0].user_id}</p>
                    </>}
 
                  

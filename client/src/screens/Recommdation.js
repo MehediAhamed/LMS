@@ -28,7 +28,7 @@ const RecomBook = () => {
     <th>Serial No.</th>
         <th>Book Name</th>
         <th>Author</th>
-        <th>Requested  Student </th>
+        <th>Requested  User </th>
         <th>Actions</th>
     </tr>
 </thead>
@@ -49,6 +49,7 @@ const RecomBook = () => {
         <td>
              
         <button onClick={() => handleAccerpt(book)} className="btn btn-success">Accept</button>
+             <br></br>
              <button onClick={() => dispatch(issuedReqDeletedByAdmin(book._id))} className="btn btn-danger">Deleted</button>
         </td>
 

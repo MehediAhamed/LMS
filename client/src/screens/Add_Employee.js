@@ -45,7 +45,7 @@ const Addemployee = () => {
                     <br />
                     <div style={{marginTop:"20px"}}>
                         <input type="text" className="form-control" style={{height:"60px",borderRadius:"20px"}}
-                         placeholder="Employee Id" value={emp_id} onChange={(e) => setEmpId(e.target.value)} />
+                         placeholder="User Id" value={emp_id} onChange={(e) => setEmpId(e.target.value)} />
              </div>
              <br />
              <br />

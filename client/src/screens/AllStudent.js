@@ -18,8 +18,7 @@ const AllStudent = () => {
     <tr>
     <th>Serial No.</th>
         <th>Name</th>
-        <th>Enrollment No</th>
-        <th>Join year</th>
+        <th>User Id</th>
         <th>Actions</th>
     </tr>
 </thead>

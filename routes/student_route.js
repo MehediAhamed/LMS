@@ -6,7 +6,7 @@ const requireLogin = require("../middleware/auth")
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 
-const { JWT_SECRET } = require("../keys");
+const { JWT_SECRET } = require("../db");
 
 
 router.post("/signup", (req, res) => {
