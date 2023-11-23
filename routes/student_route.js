@@ -12,23 +12,23 @@ const { JWT_SECRET } = require("../keys");
 router.post("/signup", (req, res) => {
     const {
         name,
-        password, email, roll_no, branch, year, phone_no,isAdmin
+        password, email, user_id, branc, year, phone_no,isAdmin
 
     } = req.body;
-    if (!roll_no || !password) {
+    if (!user_id || !password) {
         return res.status(422).json({ error: "please add all the fields" });
     }
-    Student.findOne({ roll_no: roll_no })
+    Student.findOne({ user_id: user_id })
         .then((savedUser) => {
             if (savedUser) {
                 return res
                     .status(422)
-                    .json({ error: "student already exists with that roll no" });
+                    .json({ error: "student already exists with that User ID" });
             }
             bcrypt.hash(password, 12).then((hashedpassword) => {
                 const user = new Student({
                     name,
-                    email, roll_no, branch, addmission_year: year, phone_no,
+                    email, user_id, addmission_year: year, phone_no,
                     password: hashedpassword,isAdmin
 
                 });
@@ -50,13 +50,13 @@ router.post("/signup", (req, res) => {
 
 router.post("/signin", (req, res) => {
     console.log(req.body)
-    const { roll_no, password } = req.body;
-    if (!roll_no || !password) {
-        return res.status(422).json({ error: "please add roll_no amd password" });
+    const { user_id, password } = req.body;
+    if (!user_id || !password) {
+        return res.status(422).json({ error: "please add user_id amd password" });
     }
-    Student.findOne({ roll_no: roll_no }).then((savedUser) => {
+    Student.findOne({ user_id: user_id }).then((savedUser) => {
         if (!savedUser) {
-            return res.status(422).json({ error: "Invalid roll_no or password" });
+            return res.status(422).json({ error: "Invalid user_id or password" });
         }
         bcrypt
             .compare(password, savedUser.password)
@@ -70,7 +70,7 @@ router.post("/signin", (req, res) => {
                         user: savedUser
                     });
                 } else {
-                    return res.status(422).json({ error: "Invalid roll_no or password" });
+                    return res.status(422).json({ error: "Invalid user_id or password" });
                 }
             })
             .catch((err) => {

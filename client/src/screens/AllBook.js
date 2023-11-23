@@ -22,7 +22,6 @@ const AllBook = () => {
     const { all_IssuedBook } = useSelector(state => state.allIssuedBookReducer);
     const { currentUser } = useSelector(state => state.userLoginReducer);
     const userId = currentUser.user._id;
-    const userBranch = currentUser.user.branch;
     const userName = currentUser.user.name;
     let sendReq = true
     let filterBook22 = all_IssuedBook && all_IssuedBook.filter(book => book.userId == userId);
@@ -51,7 +50,7 @@ const AllBook = () => {
         const { title, author, genre, year, _id, copies } = book;
 
         const issueUser = {
-            title, author, genre, year, userId, bookId: _id, userBranch, userName, copies
+            title, author, genre, year, userId, bookId: _id, userName, copies
         };
 
         if (book.copies) {

@@ -29,7 +29,6 @@ const RecomBook = () => {
         <th>Book Name</th>
         <th>Author</th>
         <th>Requested  Student </th>
-        <th>Student Branch</th>
         <th>Actions</th>
     </tr>
 </thead>
@@ -45,9 +44,6 @@ const RecomBook = () => {
         </td>
         <td>
             {book.userName}
-        </td>
-        <td>
-            {book.userBranch}
         </td>
        
         <td>

@@ -26,7 +26,6 @@ const IssueRequest = () => {
         <th>Book Name</th>
         <th>Author</th>
         <th>Student Name</th>
-        <th>Student Branch</th>
         <th>Actions</th>
     </tr>
 </thead>
@@ -41,9 +40,6 @@ const IssueRequest = () => {
         </td>
         <td>
             {book.userName}
-        </td>
-        <td>
-            {book.userBranch}
         </td>
        
         <td>

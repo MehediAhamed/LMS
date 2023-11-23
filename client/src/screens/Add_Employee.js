@@ -10,7 +10,7 @@ const Addemployee = () => {
     const dispatch = useDispatch()
 
     const PostData = () => {
-        const user = { password,roll_no: emp_id,name ,isAdmin:true}
+        const user = { password,user_id: emp_id,name ,isAdmin:true}
 
         
          dispatch(registerUser(user));

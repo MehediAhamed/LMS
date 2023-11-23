@@ -8,9 +8,6 @@ const IssueSchema = new mongoose.Schema({
     userName:{
         type: String, 
     },
-    userBranch:{
-        type: String, 
-    },
     bookId:{
         type: String, 
     },

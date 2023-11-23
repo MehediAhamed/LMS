@@ -18,12 +18,9 @@ const studentSchema = new mongoose.Schema({
         required: true,
     },
 
-    roll_no: {
+    user_id: {
         type: String,
         required: true,
-    },
-    branch: {
-        type: String,
     },
     addmission_year: {
         type: String,

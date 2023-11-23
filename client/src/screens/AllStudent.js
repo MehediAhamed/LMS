@@ -19,7 +19,6 @@ const AllStudent = () => {
     <th>Serial No.</th>
         <th>Name</th>
         <th>Enrollment No</th>
-        <th>Branch</th>
         <th>Join year</th>
         <th>Actions</th>
     </tr>
@@ -31,10 +30,8 @@ const AllStudent = () => {
            <td>{index+1}</td>
         <td>{student.name}</td>
         <td>
-            {student.roll_no}
+            {student.user_id}
         </td>
-        <td>{student.branch}</td>
-        <td>{student.addmission_year}</td>
         <td>
             {/* <i className='fa fa-trash m-1' onClick={()=> console.log("okk")}></i> */}
             <button className="btn btn-danger"  onClick={() => dispatch(removeAStudent(student._id))}>Remove</button>

@@ -8,9 +8,6 @@ const returnSchema = new mongoose.Schema({
     userName:{
         type: String, 
     },
-    userBranch:{
-        type: String, 
-    },
     bookId:{
         type: String, 
     },

@@ -39,7 +39,6 @@ const AllIssuedBook = () => {
         <th>Book</th>
         <th>Author</th>
         <th>Name</th>
-        <th>Branch</th>
         <th>Issued Date</th>
         <th>Return Date</th>
         <th>Dues</th>

@@ -8,11 +8,11 @@ const AdminLogin = () => {
 
     const [password, setPassword] = useState("");
     const[show,setShow] = useState("password") 
-    const [roll_no, setRoll_no] = useState("")
+    const [user_id, setuser_id] = useState("")
     const dispatch = useDispatch()
 
     const PostData = () => {
-        const user = { password, roll_no }
+        const user = { password, user_id }
         dispatch(loginUser(user))
     };
 
@@ -42,7 +42,7 @@ Management System</p>
 <br />
                     <div style={{marginTop:"20px"}}>
                         <input type="text" className="form-control" style={{height:"60px",borderRadius:"20px"}}
-                         placeholder="Employee Id" value={roll_no} onChange={(e) => setRoll_no(e.target.value)} />
+                         placeholder="Employee Id" value={user_id} onChange={(e) => setuser_id(e.target.value)} />
                     </div>
                     <br />
                     <div>

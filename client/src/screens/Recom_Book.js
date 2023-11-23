@@ -13,11 +13,10 @@ const Recom_Book = () => {
     const dispatch = useDispatch()
 
     const userId = currentUser.user._id ;
-   const  userBranch  =  currentUser.user.branch ;
    const userName = currentUser.user.name ;
 
     const PostData = () => {
-        const book = { title,author,genre,userId, userBranch,userName,isRecom:true};
+        const book = { title,author,genre,userId, userName,isRecom:true};
        
         dispatch(issueABook(book));
         setShow(true);

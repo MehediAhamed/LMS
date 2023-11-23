@@ -25,9 +25,7 @@ const initialValues = {
   name:"",
   email: "",
   password: "",
-  branch: "",
-  roll_no:"",
-  year:""
+  user_id:"",
 };
 
 const SignInForm = () => {
@@ -103,42 +101,15 @@ Management System</p>
                   className="error"
                 />
               </div>
+              
               <div className="form-row">
-                <label htmlFor="branch">Branch </label>
+                <label htmlFor="user_id">User ID </label>
                 <Field
                   type="text"
-                  name="branch"
-                  id="branch"
-                  className={
-                    errors.branch && touched.branch ? "input-error" : null
-                  }
+                  name="user_id"
+                  id="user_id"
                 />
-                <ErrorMessage name="branch" component="span" className="error" />
-              </div>
-              <div className="form-row">
-                <label htmlFor="roll_no">Roll No </label>
-                <Field
-                  type="text"
-                  name="roll_no"
-                  id="roll_no"
-                  className={
-                    errors.branch && touched.branch ? "input-error" : null
-                  }
-                />
-                <ErrorMessage name="roll_no" component="span" className="error" />
-              </div>
-
-              <div className="form-row">
-                <label htmlFor="year">admmission Year </label>
-                <Field
-                  type="number"
-                  name="year"
-                  id="year"
-                  className={
-                    errors.branch && touched.branch ? "input-error" : null
-                  }
-                />
-                <ErrorMessage name="year" component="span" className="error" />
+                <ErrorMessage name="user_id" component="span" className="error" />
               </div>
 
               <button

@@ -41,9 +41,6 @@ const TableDate = ({book,fetchDataAgaib}) => {
         {book.userName}
            
         </td>
-        <td>
-        {book.userBranch}
-        </td>
         <td>{<Moment format="YYYY-MM-DD">{book.createdAt }</Moment>}</td>
         <td>{<Moment format="YYYY-MM-DD">{dateFrom}</Moment>}</td>
         <td>{Math.floor(dayDiff) > 0 ?Math.floor(dayDiff) * 15 : 0 }</td>
